@@ -12,11 +12,8 @@ import java.util.List;
 @Controller
 public class BoardController {
 
-    private final BoardService boardService;
-
-    public BoardController(BoardService boardService) {
-        this.boardService = boardService;
-    }
+    @Autowired
+    private BoardService boardService;
 
     @RequestMapping("/board/openBoardList.do")
     public ModelAndView openBoardList() throws Exception {

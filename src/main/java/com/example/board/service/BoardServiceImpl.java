@@ -10,11 +10,8 @@ import java.util.List;
 @Service
 public class BoardServiceImpl implements BoardService {
 
-    private final BoardMapper boardMapper;
-
-    public BoardServiceImpl(BoardMapper boardMapper) {
-        this.boardMapper = boardMapper;
-    }
+    @Autowired
+    private BoardMapper boardMapper;
 
     @Override
     public List<BoardDto> selectBoardList() throws Exception{
