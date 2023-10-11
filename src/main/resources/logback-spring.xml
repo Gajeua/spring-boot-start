@@ -2,15 +2,15 @@
 <configuration debug="true">
     <!-- Appenders -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-        <encorder>
-            <Pattern>%d %5 [%c] %m%n</Pattern>
-        </encorder>
+        <encoder>
+            <Pattern>%d %5p [%c] %m%n</Pattern>
+        </encoder>
     </appender>
 
     <appender name="console-infolog" class="ch.qos.logback.core.ConsoleAppender">
-        <encorder>
+        <encoder>
             <Pattern>%d %5p %m%n</Pattern>
-        </encorder>
+        </encoder>
     </appender>
 
     <!-- 로거 -->
