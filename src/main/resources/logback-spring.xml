@@ -14,7 +14,7 @@
     </appender>
 
     <!-- 로거 -->
-    <logger name="board" level="DEBUG" appender-ref="console" />
+    <logger name="com.example" level="DEBUG" appender-ref="console" />
 
     <!-- 루트 로거 -->
     <root level="off">
