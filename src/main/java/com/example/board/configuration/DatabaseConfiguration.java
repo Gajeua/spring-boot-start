@@ -14,7 +14,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
-//test
+// test
 @Configuration
 @PropertySource("classpath:/application.properties")
 public class DatabaseConfiguration {
