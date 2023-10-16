@@ -17,7 +17,8 @@
 		]]>
 	</select>
 
-	<insert id="insertBoard" parameterType="com.example.board.dto.BoardDto">
+	<insert id="insertBoard" parameterType="com.example.board.dto.BoardDto"
+			useGeneratedKeys="true" keyProperty="boardIdx"> <!-- 생성된 key 값을 반환한다. -->
 		<![CDATA[
 			INSERT INTO t_board
 			(
@@ -82,4 +83,20 @@
 			WHERE board_idx = #{boardIdx}
 		]]>
 	</update>
+
+	<insert id="insertBoardFileList" parameterType="com.example.board.dto.BoardFileDto">
+		<![CDATA[
+			INSERT INTO t_file (
+			                    board_idx, original_file_name, stored_file_path,
+			                    file_size,creator_id, created_datetime
+			                    )
+			VALUES
+		]]>
+		<foreach collection="boardFileDtoList" item="item" separator=",">
+			(
+			 #{item.boardIdx}, #{item.originalFileName}, #{item.storedFilePath},
+			 #{item.fileSize}, 'admin', NOW()
+			)
+		</foreach>
+	</insert>
 </mapper>
